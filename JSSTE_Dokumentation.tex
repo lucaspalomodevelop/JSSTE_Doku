@@ -37,6 +37,8 @@ Liste aller Statischen Variablen.
 	\hline
 	\_IMPORTS\_ & \inlinecode{JSSTE}{\"\_IMPORTS\_\":[\"./include1\",\"include2\"],} & ist eine Liste von jsste Dateien die man einbinden kann ( Optional ) \\
 	\hline
+	// & \inlinecode{JSSTE}{\"//":"Ich bin ein Kommentar",} & diese Syntax kann verwendet werden um die Page-Datei in Bereiche via Kommentar zu unterteilen, sie haben keine Einfluss auf das Endergebnis  \\
+	\hline
 \end{tabularx} 
 \begin{comment}
 \\
@@ -58,12 +60,12 @@ Liste aller Statischen Variablen.
 \newline
 \lstinputlisting[style=JSSTE]{./examples/pages/page2.jsste}
 \end{comment}
-
+\newpage
 \section{Die Häufigsten Fehler}
 \textit{SyntaxError: Unexpected string in JSON at position X}: 
 \newline
 Meist ist der Fehler darauf zurück zu führen, dass in der Page-Datei 
-ein Komma vergessen wurde
+ein Komma vergessen wurde.
 \begin{lstlisting}[style=JSSTE]
 	{
 	"_TEMPLATE_":"startseite",
