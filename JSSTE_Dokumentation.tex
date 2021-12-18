@@ -1,0 +1,105 @@
+\documentclass[ngerman,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.50cm, right=1.50cm, top=1.50cm, bottom=2cm]{geometry}
+\usepackage[ngerman]{babel}
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\usepackage{newcode}
+\usepackage{verbatim}
+
+
+\author{Lucas Manuel Palomo Lauterbach}
+\title {JSSTE Dokumentation \\ Version 1}
+\begin{document}
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Was ist JSSTE?}
+JSSTE ist eine View-Library, die es ermöglicht Statisch aufgebaute HTML Seite jeweils mit anderem Inhalt zu füllen.
+
+
+
+\section{Statische Variablen}
+
+Statische Variablen sind zum festlegen der Page Eigenschaften da.\\
+\newline
+Liste aller Statischen Variablen.
+\newline
+\begin{tabularx}{\textwidth}{|c|X|X|}
+	\hline
+	\_TEMPLATE\_ & \inlinecode{JSSTE}{\"\_TEMPLATE\_\":\"startpage\",} & gibt an wie die Template-Datei heißt. wenn diese Variable nicht existiert oder keinen wert hat, wird diese nicht im Browser anzeigbar sein ( gut für Include-Dateien )  \\
+	\hline
+	\_STYLES\_ & \inlinecode{JSSTE}{\"\_STYLES\_\":[\"main.css\",\"index.css\"],} & ist eine Liste von CSS Dateien die man einbinden kann ( Optional ) \\
+	\hline
+	\_IMPORTS\_ & \inlinecode{JSSTE}{\"\_IMPORTS\_\":[\"./include1\",\"include2\"],} & ist eine Liste von jsste Dateien die man einbinden kann ( Optional ) \\
+	\hline
+\end{tabularx} 
+\begin{comment}
+\\
+\begin{lstlisting}[style=JSSTE, caption={Beispiel einer Page}]
+{
+	"_TEMPLATE_":"startseite",
+	"_STYLES_":["base.css"],
+	"_INCLUDES_":["baseScript"]
+}
+\end{lstlisting}
+
+\begin{lstlisting}[style=JSSTE, caption={Beispiel einer Inlcude-Datei}]
+	{
+		"_STYLES_":["base.css"],
+		"_INCLUDES_":["baseScript"]
+	}
+\end{lstlisting}
+
+\newline
+\lstinputlisting[style=JSSTE]{./examples/pages/page2.jsste}
+\end{comment}
+
+\section{Die Häufigsten Fehler}
+\textit{SyntaxError: Unexpected string in JSON at position X}: 
+\newline
+Meist ist der Fehler darauf zurück zu führen, dass in der Page-Datei 
+ein Komma vergessen wurde
+\begin{lstlisting}[style=JSSTE]
+	{
+	"_TEMPLATE_":"startseite",
+	"_STYLES_":["base.css"]  <- Hier wäre der Fehler (Komma Fehlt)
+	"meineVariable":"ich mag Kuchen"
+	}
+\end{lstlisting}
+
+\textit{SyntaxError: Unexpected token \} in JSON at position X}: 
+\newline
+Dieser Fehler rührt meist daher, die letzte Variable in der Page-Datei nicht mit einem Komma abgeschlossen werden darf
+\begin{lstlisting}[style=JSSTE]
+{
+"_TEMPLATE_":"startseite",
+"_STYLES_":["base.css"],  
+"meineVariable":"ich mag Kuchen", <- Hier wäre der Fehler (Komma zu viel)
+}
+\end{lstlisting}
+
+\textit{SyntaxError: Unexpected token X in JSON at position Y}: 
+\newline
+Dieser Fehler rührt meist daher, das beim erstellen einer Variable die Anführungszeichen vergessen wurden.
+\begin{lstlisting}[style=JSSTE]
+{
+"_TEMPLATE_":"startseite",
+"_STYLES_":["base.css"],  
+meineVariable:"ich mag Kuchen" <- Hier wäre der Fehler (Variable steht nicht in Anführungszeichen)
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+	
+
+\end{document}
