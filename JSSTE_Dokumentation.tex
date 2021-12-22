@@ -14,11 +14,11 @@
 \author{Lucas Manuel Palomo Lauterbach}
 \title {JSSTE Dokumentation \\ Version 1}
 \begin{document}
-	\maketitle
-	\newpage
-	\tableofcontents
-	\newpage
-	\section{Was ist JSSTE?}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Was ist JSSTE?}
 JSSTE ist eine View-Library, die es ermöglicht Statisch aufgebaute HTML Seite jeweils mit anderem Inhalt zu füllen.
 
 
@@ -31,13 +31,13 @@ Liste aller Statischen Variablen.
 \newline
 \begin{tabularx}{\textwidth}{|c|X|X|}
 	\hline
-	\_TEMPLATE\_ & \inlinecode{JSSTE}{\"\_TEMPLATE\_\":\"startpage\",} & gibt an wie die Template-Datei heißt. wenn diese Variable nicht existiert oder keinen wert hat, wird diese nicht im Browser anzeigbar sein ( gut für Include-Dateien )  \\
+	\_TEMPLATE\_ & \inlinecode{JSSTE}{\"\_TEMPLATE\_\":\"startpage\",}                & gibt an wie die Template-Datei heißt. wenn diese Variable nicht existiert oder keinen wert hat, wird diese nicht im Browser anzeigbar sein ( gut für Include-Dateien ) \\
 	\hline
-	\_STYLES\_ & \inlinecode{JSSTE}{\"\_STYLES\_\":[\"main.css\",\"index.css\"],} & ist eine Liste von CSS Dateien die man einbinden kann ( Optional ) \\
+	\_STYLES\_   & \inlinecode{JSSTE}{\"\_STYLES\_\":[\"main.css\",\"index.css\"],}   & ist eine Liste von CSS Dateien die man einbinden kann ( Optional )                                                                                                     \\
 	\hline
-	\_IMPORTS\_ & \inlinecode{JSSTE}{\"\_IMPORTS\_\":[\"./include1\",\"include2\"],} & ist eine Liste von jsste Dateien die man einbinden kann ( Optional ) \\
+	\_IMPORTS\_  & \inlinecode{JSSTE}{\"\_IMPORTS\_\":[\"./include1\",\"include2\"],} & ist eine Liste von jsste Dateien die man einbinden kann ( Optional )                                                                                                   \\
 	\hline
-\end{tabularx} 
+\end{tabularx}
 \begin{comment}
 \\
 \begin{lstlisting}[style=JSSTE, caption={Beispiel einer Page}]
@@ -100,6 +100,6 @@ meineVariable:"ich mag Kuchen" <- Hier wäre der Fehler (Variable steht nicht in
 
 
 
-	
+
 
 \end{document}
