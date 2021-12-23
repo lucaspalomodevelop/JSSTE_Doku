@@ -67,7 +67,7 @@ ein Komma vergessen wurde.
 \begin{lstlisting}[style=JSSTE]
 	{
 	"_TEMPLATE_":"startseite",
-	"_STYLES_":["base.css"]  <- Hier wäre der Fehler (Komma Fehlt)
+	"_STYLES_":["base.css"]  // Hier wäre der Fehler (Komma Fehlt)
 	"meineVariable":"ich mag Kuchen"
 	}
 \end{lstlisting}
@@ -79,7 +79,7 @@ Dieser Fehler rührt meist daher, die letzte Variable in der Page-Datei nicht mi
 {
 "_TEMPLATE_":"startseite",
 "_STYLES_":["base.css"],  
-"meineVariable":"ich mag Kuchen", <- Hier wäre der Fehler (Komma zu viel)
+"meineVariable":"ich mag Kuchen", // Hier wäre der Fehler (Komma zu viel)
 }
 \end{lstlisting}
 
@@ -90,11 +90,11 @@ Dieser Fehler rührt meist daher, das beim erstellen einer Variable die Anführu
 {
 "_TEMPLATE_":"startseite",
 "_STYLES_":["base.css"],  
-meineVariable:"ich mag Kuchen" <- Hier wäre der Fehler (Variable steht nicht in Anführungszeichen)
+meineVariable:"ich mag Kuchen" // Hier wäre der Fehler (Variable steht nicht in Anführungszeichen)
 }
 \end{lstlisting}
 
-
+\section{Entwickler-Doku}
 
 
 
